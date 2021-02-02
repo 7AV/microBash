@@ -6,7 +6,7 @@
 /*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 10:53:00 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/02 16:02:19 by sbudding         ###   ########.fr       */
+/*   Updated: 2021/02/02 16:28:45 by sbudding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,19 @@ void	ft_put_export(char **env)
 	//exit
 }
 
-void	ft_export(char **arg, char **env)
+void	ft_export(char **arg, char ***env)
 {
 	int		ind;
 
 	ind = 1;
-	!(arg[ind]) ? ft_put_export(env) : 0;
+	!(arg[ind]) ? ft_put_export(*env) : 0;
 	while (arg[ind])
 	{
-		ft_set_env(env, 1, arg[ind]);
+		*env = ft_set_env(*env, 1, arg[ind]);
+		// int inx=0;
+		// while (env[inx])
+		// 	printf("%s\n", env[inx++]);
 		ind++;
+		
 	}
 }

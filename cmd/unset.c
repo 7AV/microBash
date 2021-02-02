@@ -6,7 +6,7 @@
 /*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 10:53:47 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/02 16:04:52 by sbudding         ###   ########.fr       */
+/*   Updated: 2021/02/02 16:19:27 by sbudding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_unset(char **arg, char **env)
 	ind = 1;
 	while (arg[ind])
 	{
-		ft_set_env(env, -1, arg[ind]);
+		env = ft_set_env(env, -1, arg[ind]);
 		ind++;
 	}
 }
