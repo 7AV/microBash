@@ -6,7 +6,7 @@
 /*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 16:49:28 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/02 16:42:27 by sbudding         ###   ########.fr       */
+/*   Updated: 2021/02/02 17:14:45 by sbudding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_exe(t_data *data, char **todo, char **env)
 	!(ft_strncmp(todo[0], "env", 3)) ? ft_env(todo, env) : 0;			// +
 	!(ft_strncmp(todo[0], "export", 6)) ? ft_export(todo, &env) : 0;		//
 	!(ft_strncmp(todo[0], "unset", 5)) ? ft_unset(todo, &env) : 0;		//
-	// !(ft_strncmp(todo[0], "exit", 4)) ? ft_exit() : 0;					//
+	!(ft_strncmp(todo[0], "exit", 4)) ? ft_exit(todo) : 0;					//
 
 	// !(stat(todo[0], &stats)) ? ft_exe_fork(todo, env) : 0;
 	
@@ -49,8 +49,8 @@ char	**ft_parse(t_data *data, char *line)
 	char **dst;
 	
 	dst = (char**)calloc(100, sizeof(char));
-	dst[0] = "unset";
-	dst[1] = "PWD";
+	dst[0] = "exit";
+	dst[1] = NULL;
 	dst[2] = NULL;
 	// dst[3] = "env";
 	// dst[4] = "env";

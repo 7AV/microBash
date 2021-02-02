@@ -6,7 +6,7 @@
 /*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 16:45:51 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/02 16:31:20 by sbudding         ###   ########.fr       */
+/*   Updated: 2021/02/02 17:09:15 by sbudding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 # include <stdio.h>
 
+void		ft_exit(char **arg);
 void		ft_unset(char **arg, char ***env);
 void		ft_export(char **arg, char ***env);
 void		ft_env(char **arg, char **env);
