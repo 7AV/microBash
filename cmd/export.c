@@ -6,7 +6,7 @@
 /*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 10:53:00 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/02 14:14:21 by sbudding         ###   ########.fr       */
+/*   Updated: 2021/02/02 16:02:19 by sbudding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	ft_export(char **arg, char **env)
 	!(arg[ind]) ? ft_put_export(env) : 0;
 	while (arg[ind])
 	{
-		
+		ft_set_env(env, 1, arg[ind]);
+		ind++;
 	}
 }
