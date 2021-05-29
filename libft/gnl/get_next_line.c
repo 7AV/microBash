@@ -5,78 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/13 13:15:58 by sbudding          #+#    #+#             */
-/*   Updated: 2020/12/10 10:49:55 by sbudding         ###   ########.fr       */
+/*   Created: 2021/02/03 12:41:11 by dwillett          #+#    #+#             */
+/*   Updated: 2021/02/15 15:44:47 by sbudding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int				ft_file_was_read(char **line, char **save)
+int		ft_strlen_gnl(const char *s)
 {
-	int			ind;
-	char		*tmp;
+	int	i;
 
-	if (*save && (ind = ft_strchr_ind(*save, '\n')) > -1)
-	{
-		(*save)[ind] = '\0';
-		if ((!(*line = ft_strdup(*save))) ||
-		(!(tmp = ft_strdup(*save + ind + 1))))
-			return (-1);
-		free(*save);
-		*save = tmp;
-		return (1);
-	}
-	else if (*save)
-	{
-		*line = *save;
-		*save = 0;
-		return (0);
-	}
-	*line = ft_strdup("");
-	return (0);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
-int				ft_get_next_line(int fd, char **line, char *buff)
+void	ft_dce(void)
 {
-	static char	*save[256];
-	int			count;
-	int			ind;
-	char		*tmp;
+	write(1, "exit\n", 5);
+	exit(0);
+}
 
-	while ((count = read(fd, buff, BUFFER_SIZE)) > 0)
+int		get_next_line(char **line)
+{
+	char		buf[2];
+	int			i;
+
+	if (!(*line = ft_strdup_gnl("\0")))
+		return (-1);
+	i = read(0, buf, 1);
+	buf[1] = '\0';
+	while (buf[0] != '\n' && i != 0)
 	{
-		buff[count] = '\0';
-		if (!(save[fd] = ft_strjoin_gnl(save[fd], buff)))
+		if (!(*line = ft_strjoin_gnl(*line, buf)))
 			return (-1);
-		if ((ind = ft_strchr_ind(save[fd], '\n')) > -1)
+		i = read(0, buf, 1);
+		buf[1] = '\0';
+		if (!i)
 		{
-			(save[fd])[ind] = '\0';
-			if ((!(*line = ft_strdup(save[fd]))) ||
-			(!(tmp = ft_strdup(save[fd] + ind + 1))))
-				return (-1);
-			free(save[fd]);
-			save[fd] = tmp;
-			free(buff);
-			return (1);
+			write(1, "  \b\b", 4);
+			buf[0] = '\0';
 		}
+		i = 1;
 	}
-	free(buff);
-	return (ft_file_was_read(line, &save[fd]));
-}
-
-int				get_next_line(int fd, char **line)
-{
-	char		*buff;
-
-	if ((fd < 0) || (line == NULL) || (BUFFER_SIZE < 1))
-		return (-1);
-	if (!(buff = (char *)malloc((BUFFER_SIZE + 1) * (sizeof(char)))))
-		return (-1);
-	if (read(fd, buff, 0) == -1)
-	{
-		free(buff);
-		return (-1);
-	}
-	return (ft_get_next_line(fd, line, buff));
+	if (!i && (**line == 0))
+		ft_dce();
+	return (1);
 }

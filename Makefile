@@ -6,14 +6,14 @@
 #    By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/30 16:43:28 by sbudding          #+#    #+#              #
-#    Updated: 2021/02/02 10:55:12 by sbudding         ###   ########.fr        #
+#    Updated: 2021/02/15 16:07:48 by sbudding         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = minishell
 
-FLAGS = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra -Werror
 
 LIBFT = libft.a
 
@@ -27,7 +27,24 @@ SRC = main.c \
 	cmd/export.c \
 	cmd/unset.c \
 	cmd/exit.c \
-	src/utils.c
+	src/loop.c \
+	src/env_set.c \
+	src/executable.c \
+	src/redir.c \
+	src/signal.c \
+	src/utils.c \
+	src/errors.c \
+	pars/echo_arg.c \
+	pars/list_functions.c \
+	pars/list_refactoring.c \
+	pars/mult_arg.c \
+	pars/mult_arg_extra.c \
+	pars/new_string.c \
+	pars/parser_extra.c \
+	pars/parser.c \
+	pars/processing_extra.c \
+	pars/symbols_processing.c \
+	pars/syntax_errors.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -44,8 +61,8 @@ $(GNL):
 	$(MAKE) -C ./libft/gnl
 	cp libft/gnl/gnl.a .
 
-%.o:%.c cub3d.h
-	@gcc $(FLAGS) -I mlx -c $< -o $@
+%.o:%.c minishell.h
+	@gcc $(FLAG) -c $< -o $@
 
 run: $(NAME)
 	./$(NAME)
@@ -64,7 +81,7 @@ clean:
 
 fclean: clean
 		$(MAKE) fclean -C ./libft
-		$(MAKE) clean -C ./libft/gnl
+		$(MAKE) fclean -C ./libft/gnl
 		rm -rf $(NAME) libft.a gnl.a
 
 re: fclean all

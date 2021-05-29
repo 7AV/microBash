@@ -6,7 +6,7 @@
 #    By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/30 12:00:37 by sbudding          #+#    #+#              #
-#    Updated: 2020/12/10 11:43:53 by sbudding         ###   ########.fr        #
+#    Updated: 2021/02/05 15:41:30 by sbudding         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME = gnl.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -c -g
 SRC = 	get_next_line.c \
-		get_next_line_utils.c
+		ft_strdup.c \
+		ft_strjoin.c
+		
 
 OBJ = $(SRC:.c=.o)
 

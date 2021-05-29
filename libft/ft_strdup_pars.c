@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.c                                              :+:      :+:    :+:   */
+/*   ft_strdup_pars.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dwillett <dwillett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 10:52:26 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/14 16:24:30 by sbudding         ###   ########.fr       */
+/*   Created: 2020/10/31 10:45:59 by dwillett          #+#    #+#             */
+/*   Updated: 2021/02/05 18:46:04 by dwillett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "libft.h"
 
-void	ft_env(char **env)
+char	*ft_strdup_pars(const char *s1)
 {
-	int		ind;
+	char	*res;
+	int		i;
 
-	ind = 0;
-	while (env[ind])
+	i = 0;
+	res = (char*)malloc(ft_strlen((char *)s1) + 1);
+	if (res)
 	{
-		if (ft_strrchr(env[ind], '='))
-			ft_putendl_fd(env[ind], 1);
-		ind++;
+		while (s1[i] != '\0')
+		{
+			res[i] = s1[i];
+			i++;
+		}
+		res[i] = s1[i];
+		return (res);
 	}
+	return (NULL);
 }

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+         #
+#    By: dwillett <dwillett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/30 12:00:37 by sbudding          #+#    #+#              #
-#    Updated: 2020/12/10 11:43:47 by sbudding         ###   ########.fr        #
+#    Updated: 2021/02/05 18:43:55 by dwillett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c -g
+CFLAGS = -Wall -Wextra -Werror -c
 SRC = 	ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
@@ -46,7 +46,10 @@ SRC = 	ft_memset.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
+		ft_strjoin_pars.c \
+		ft_strtrim_pars.c \
+		ft_strdup_pars.c
 
 BONUS_SRC = ft_lstnew.c \
 			ft_lstadd_front.c \

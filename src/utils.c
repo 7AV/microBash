@@ -6,71 +6,51 @@
 /*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 17:37:16 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/02 16:40:23 by sbudding         ###   ########.fr       */
+/*   Updated: 2021/02/12 19:28:59 by sbudding         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-char	**ft_add_var(char **src, char **dst, char *var)
+int		ft_strnnchr(char *str, int c)
 {
-	int		ind;
+	int		index;
 
-	ind = 0;
-	while (src[ind])
+	if ((char)c == '\0')
+		return (ft_strlen(str));
+	index = 0;
+	while (index < ft_strlen(str))
 	{
-		dst[ind] = ft_libstrdup(src[ind]);
-		ind++;
+		if (*(str + index) == c)
+			return (index);
+		index++;
 	}
-	dst[ind] = ft_libstrdup(var);
-	dst[ind + 1] = NULL;
-	return (dst);
+	return (index);
 }
 
-char	**ft_del_var(char **src, char **dst, char *var)
+int		ft_strnchr(char *str, int c)
 {
-	int		ind;
+	int		index;
 
-	ind = 0;
-	while (ft_strncmp(src[ind], var, ft_strlen(var)))
+	if ((char)c == '\0')
+		return (ft_strlen(str));
+	index = 0;
+	while (index < ft_strlen(str))
 	{
-		dst[ind] = src[ind];
-		ind++;
+		if (*(str + index) == c)
+			return (index + 1);
+		index++;
 	}
-	while (src[ind + 1])
-	{
-		dst[ind] = src[ind + 1];
-		ind++;
-	}
-	dst[ind] = NULL;
-	return (dst);
+	return (index);
 }
 
-char	**ft_set_env(char **envp, int toggle, char *var)
+void	ft_errno(void)
 {
-	int		ind;
-	char	**dst;
+	char	*str;
 
-	ind = 0;
-	while (envp[ind])
-		ind++;
-	ind += toggle;
-	dst = ft_calloc(ind + 1, sizeof(char*));
-	if (toggle > 0)
-		dst = ft_add_var(envp, dst, var);
-	else if (toggle < 0)
-		dst = ft_del_var(envp, dst, var);
-	else
-	{
-		ind = 0;
-		while (envp[ind])
-		{
-			dst[ind] = ft_libstrdup(envp[ind]);
-			ind++;
-		}
-		dst[ind] = NULL;
-	}
-	return (dst);
+	str = strerror(errno);
+	ft_putstr_fd("minihell: ", STDERR_FILENO);
+	ft_putendl_fd(str, STDERR_FILENO);
 }
 
 void	ft_free(char **trash)
