@@ -1,6 +1,6 @@
 # microBash
 
-<img align="right"  src="./img/example.png" width="45%" />
+<img align="right"  src="./img/example.png" width="60%" />
 
 Simple shell implementation, that supports:
 - search and launch the right executable
