@@ -1,7 +1,5 @@
 # microBash
 
-<!-- <img align="right"  src="./img/logo.png" width="20%" /> -->
-
 Simple shell implementation, that supports:
 - search and launch the right executable
 - **echo** with option ’-n’
