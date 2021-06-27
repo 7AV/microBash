@@ -11,7 +11,7 @@ Simple shell implementation, that supports:
 - **exit** without any options
 - Command separates with: **;**
 - **'** and **"** (except for multiline commands)
-- Redirections: **<> ">>"**
+- Redirections: **<**, **>**, **>>**
 - Pipes: **|**
 - Environmental variables: **$**
 - **$?**
@@ -22,8 +22,11 @@ Simple shell implementation, that supports:
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
+
+or just:
 ```bash
-pip install foobar
+git clone https://github.com/anvv5/microBash.git; cd microBash; make; ./minishell;
+
 ```
 
 ## Usage
