@@ -25,7 +25,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 or just:
 ```bash
-git clone https://github.com/anvv5/microBash.git; cd microBash; make; ./minishell;
+git clone https://github.com/anvv5/microBash.git ; cd microBash ; make ; ./minishell ;
 
 ```
 
