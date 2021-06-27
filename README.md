@@ -27,5 +27,5 @@ git clone https://github.com/anvv5/microBash.git ; cd microBash ; make ; ./micro
 
 ```
 
-<img align="left"  src="./img/example.png" width="75%" />
+<img align="left"  src="./img/example.png"  />
 
