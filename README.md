@@ -1,7 +1,5 @@
 # microBash
 
-<img align="right"  src="./img/example.png" width="60%" />
-
 Simple shell implementation, that supports:
 - search and launch the right executable
 - **echo** with option ’-n’
@@ -26,4 +24,6 @@ Simple shell implementation, that supports:
 git clone https://github.com/anvv5/microBash.git ; cd microBash ; make ; ./microBash ;
 
 ```
+
+<img align="left"  src="./img/example.png" width="75%" />
 
