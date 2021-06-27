@@ -38,15 +38,16 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT) $(GNL) microBash.h
-	gcc libft.a gnl.a $(OBJ) -o $(NAME)
+	@gcc libft.a gnl.a $(OBJ) -o $(NAME)
+	@echo "\033[0;32mSuccess: microBash instaled!"
 
 $(LIBFT):
-	$(MAKE) bonus -C ./libft
-	cp libft/libft.a .
+	@$(MAKE) bonus -C ./libft
+	@cp libft/libft.a .
 
 $(GNL):
-	$(MAKE) -C ./libft/gnl
-	cp libft/gnl/gnl.a .
+	@$(MAKE) -C ./libft/gnl
+	@cp libft/gnl/gnl.a .
 
 %.o:%.c microBash.h
 	@gcc $(FLAG) -c $< -o $@

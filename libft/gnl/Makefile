@@ -11,7 +11,10 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) 
-		ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+
+%.o: %.c get_next_line.h
+	@gcc $(FLAG) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
