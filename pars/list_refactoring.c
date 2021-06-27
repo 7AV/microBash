@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   list_refactoring.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 14:33:41 by dwillett          #+#    #+#             */
-/*   Updated: 2021/02/13 12:09:37 by sbudding         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../minishell.h"
+#include "../microBash.h"
 
 int	syntax_check(t_list_block *head, char **error_string)
 {

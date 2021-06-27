@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   loop.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 16:49:28 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/15 15:29:46 by sbudding         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../minishell.h"
+#include "../microBash.h"
 
 void	ft_execut(t_list_block *data, char ***env)
 {
@@ -122,7 +110,7 @@ void	ft_loop(char **env)
 	data = NULL;
 	while (2007)
 	{
-		ft_putstr_fd("minihell> ", 1);
+		ft_putstr_fd("microBash> ", 1);
 		get_next_line(&line);
 		data = NULL;
 		if (g_dce == 1)

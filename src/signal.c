@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   signal.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 14:36:16 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/15 15:46:58 by sbudding         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../minishell.h"
+#include "../microBash.h"
 
 void	ft_sig_ctrl_c(int signal)
 {
@@ -18,7 +6,7 @@ void	ft_sig_ctrl_c(int signal)
 		;
 	g_exit = 1;
 	ft_putendl_fd("\b\b  \b\b", 1);
-	ft_putstr_fd("minihell> ", 1);
+	ft_putstr_fd("microBash> ", 1);
 	g_dce = 1;
 }
 

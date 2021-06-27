@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 16:45:51 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/15 15:46:48 by sbudding         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#ifndef MICROBASH_H
+# define MICROBASH_H
 
 # include "libft/libft.h"
 # include "libft/gnl/get_next_line.h"

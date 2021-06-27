@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/01 17:37:16 by sbudding          #+#    #+#             */
-/*   Updated: 2021/02/12 19:28:59 by sbudding         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "../minishell.h"
+#include "../microBash.h"
 
 int		ft_strnnchr(char *str, int c)
 {
@@ -49,7 +37,7 @@ void	ft_errno(void)
 	char	*str;
 
 	str = strerror(errno);
-	ft_putstr_fd("minihell: ", STDERR_FILENO);
+	ft_putstr_fd("microBash: ", STDERR_FILENO);
 	ft_putendl_fd(str, STDERR_FILENO);
 }
 

@@ -1,17 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: sbudding <sbudding@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/01/30 16:43:28 by sbudding          #+#    #+#              #
-#    Updated: 2021/02/15 16:07:48 by sbudding         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-
-NAME = minishell
+NAME = microBash
 
 FLAG = -Wall -Wextra -Werror
 
@@ -50,7 +37,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT) $(GNL) minishell.h
+$(NAME): $(OBJ) $(LIBFT) $(GNL) microBash.h
 	gcc libft.a gnl.a $(OBJ) -o $(NAME)
 
 $(LIBFT):
@@ -61,18 +48,8 @@ $(GNL):
 	$(MAKE) -C ./libft/gnl
 	cp libft/gnl/gnl.a .
 
-%.o:%.c minishell.h
+%.o:%.c microBash.h
 	@gcc $(FLAG) -c $< -o $@
-
-run: $(NAME)
-	./$(NAME)
-
-git:
-	git add .
-	git commit -m save
-
-norm:
-	@norminette $(SRC) minishell.h libft/*.c libft/*.h libft/gnl/*.c libft/gnl/*.h 
 
 clean:
 		$(MAKE) clean -C ./libft
