@@ -21,16 +21,7 @@ Simple shell implementation, that supports:
 ## Installation
 
 ```bash
-git clone https://github.com/anvv5/microBash.git ; cd microBash ; make ; ./minishell ;
+git clone https://github.com/anvv5/microBash.git ; cd microBash ; make ; ./microBash ;
 
 ```
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
