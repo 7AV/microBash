@@ -10,12 +10,11 @@ Simple shell implementation, that supports:
 - **env** without any options and any arguments
 - **exit** without any options
 - Command separates with: **;**
-- **'** and **"** (except for multiline commands)
 - Redirections: **<**, **>**, **>>**
 - Pipes: **|**
 - Environmental variables: **$**
-- **$?**
 - Signals: **ctrl-C, ctrl-D, ctrl-\\**
+- Error handling: **$?**
 
 
 ## Installation
