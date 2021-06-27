@@ -39,7 +39,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT) $(GNL) microBash.h
 	@gcc libft.a gnl.a $(OBJ) -o $(NAME)
-	@echo "\033[0;32mSuccess: microBash instaled!"
+	@echo "\033[0;32mSuccess: microBash instaled!\033[0m"
 
 $(LIBFT):
 	@$(MAKE) bonus -C ./libft
