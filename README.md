@@ -17,7 +17,7 @@ Simple shell implementation, that supports:
 - Error handling: **$?**
 
 
-## Installation
+## Quick start
 
 ```bash
 git clone https://github.com/anvv5/microBash.git ; cd microBash ; make ; ./microBash ;
