@@ -1,4 +1,4 @@
-#include "../microBash.h"
+#include "microBash.h"
 
 int		ft_valid_exp(char **env, int toggle, char *arg)
 {

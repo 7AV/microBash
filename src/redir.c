@@ -1,4 +1,4 @@
-#include "../microBash.h"
+#include "microBash.h"
 
 void	ft_back_redir_execut(t_list_block **data, char ***env, int fd_save)
 {

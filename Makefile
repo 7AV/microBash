@@ -6,14 +6,14 @@ LIBFT = libft.a
 
 GNL = gnl.a
 
-SRC = main.c \
-	cmd/echo.c \
-	cmd/pwd.c \
-	cmd/cd.c \
-	cmd/env.c \
-	cmd/export.c \
-	cmd/unset.c \
-	cmd/exit.c \
+SRC = src/main.c \
+	src/cmd/echo.c \
+	src/cmd/pwd.c \
+	src/cmd/cd.c \
+	src/cmd/env.c \
+	src/cmd/export.c \
+	src/cmd/unset.c \
+	src/cmd/exit.c \
 	src/loop.c \
 	src/env_set.c \
 	src/executable.c \
@@ -21,45 +21,45 @@ SRC = main.c \
 	src/signal.c \
 	src/utils.c \
 	src/errors.c \
-	pars/echo_arg.c \
-	pars/list_functions.c \
-	pars/list_refactoring.c \
-	pars/mult_arg.c \
-	pars/mult_arg_extra.c \
-	pars/new_string.c \
-	pars/parser_extra.c \
-	pars/parser.c \
-	pars/processing_extra.c \
-	pars/symbols_processing.c \
-	pars/syntax_errors.c
+	src/pars/echo_arg.c \
+	src/pars/list_functions.c \
+	src/pars/list_refactoring.c \
+	src/pars/mult_arg.c \
+	src/pars/mult_arg_extra.c \
+	src/pars/new_string.c \
+	src/pars/parser_extra.c \
+	src/pars/parser.c \
+	src/pars/processing_extra.c \
+	src/pars/symbols_processing.c \
+	src/pars/syntax_errors.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT) $(GNL) microBash.h
+$(NAME): $(OBJ) $(LIBFT) $(GNL) src/microBash.h
 	@gcc libft.a gnl.a $(OBJ) -o $(NAME)
 	@echo "\033[0;32mSuccess: microBash instaled!\033[0m"
 
 $(LIBFT):
-	@$(MAKE) bonus -C ./libft
-	@cp libft/libft.a .
+	@$(MAKE) bonus -C ./src/libft
+	@cp src/libft/libft.a .
 
 $(GNL):
-	@$(MAKE) -C ./libft/gnl
-	@cp libft/gnl/gnl.a .
+	@$(MAKE) -C ./src/libft/gnl
+	@cp src/libft/gnl/gnl.a .
 
-%.o:%.c microBash.h
+%.o:%.c src/microBash.h
 	@gcc $(FLAG) -c $< -o $@
 
 clean:
-		$(MAKE) clean -C ./libft
-		$(MAKE) clean -C ./libft/gnl
+		$(MAKE) clean -C ./src/libft
+		$(MAKE) clean -C ./src/libft/gnl
 		rm -rf $(OBJ)
 
 fclean: clean
-		$(MAKE) fclean -C ./libft
-		$(MAKE) fclean -C ./libft/gnl
+		$(MAKE) fclean -C ./src/libft
+		$(MAKE) fclean -C ./src/libft/gnl
 		rm -rf $(NAME) libft.a gnl.a
 
 re: fclean all

@@ -1,4 +1,4 @@
-#include "../microBash.h"
+#include "microBash.h"
 
 void	ft_exit_status(int stat_loc)
 {

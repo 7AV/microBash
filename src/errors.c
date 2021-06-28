@@ -1,4 +1,4 @@
-#include "../microBash.h"
+#include "microBash.h"
 
 void	ft_error_synt(char *arg)
 {

@@ -1,4 +1,4 @@
-#include "../microBash.h"
+#include "microBash.h"
 
 int		ft_strnnchr(char *str, int c)
 {

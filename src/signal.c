@@ -1,4 +1,4 @@
-#include "../microBash.h"
+#include "microBash.h"
 
 void	ft_sig_ctrl_c(int signal)
 {
